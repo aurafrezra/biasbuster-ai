@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bias Buster AI - Result</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            text-align: center;
+            padding: 2rem;
+        }
+        .result-box {
+            background-color: #e9ecef;
+            padding: 2rem;
+            width: 60%;
+            margin: auto;
+            border-radius: 10px;
+        }
+        canvas {
+            margin-top: 30px;
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bias Buster AI</h1>
+
+    <div class="result-box">
+        <p><strong>Left Bias:</strong> {{ left_bias }}%</p>
+        <p><strong>Right Bias:</strong> {{ right_bias }}%</p>
+
+        <canvas id="biasChart"></canvas>
+    </div>
+
+    <script>
+        const leftBias = {{ left_bias | default(0) }};
+        const rightBias = {{ right_bias | default(0) }};
+
+        const ctx = document.getElementById('biasChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Left Bias', 'Right Bias'],
+                datasets: [{
+                    label: 'Bias Percentage',
+                    data: [leftBias, rightBias],
+                    backgroundColor: ['#007bff', '#dc3545'],
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: {
+                            stepSize: 10
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top'
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

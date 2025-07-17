@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BiasBuster AI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            padding: 2rem;
+            text-align: center;
+        }
+        textarea {
+            width: 80%;
+            height: 150px;
+            font-size: 16px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>BiasBuster AI</h1>
+    <p>Paste your text and detect bias using LLMs</p>
+    
+    <form action="/analyze" method="POST">
+        <textarea name="user_text" placeholder="Paste your text here..." required></textarea><br>
+        <button type="submit">Analyze</button>
+    </form>
+</body>
+</html>
