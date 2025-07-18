@@ -24,7 +24,7 @@
 ## 🖼️ Screenshots
 
 
-(screenshots/input-page.png)
+(Screenshot 2025-07-18 184843.png)
 
 (screenshots/output-report.png)
 
