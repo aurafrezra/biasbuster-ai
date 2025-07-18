@@ -1,42 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>BiasBuster AI</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f2f5;
-            padding: 2rem;
-            text-align: center;
-        }
-        textarea {
-            width: 80%;
-            height: 150px;
-            font-size: 16px;
-            padding: 10px;
-            margin-bottom: 20px;
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 18px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bias Buster AI</title>
+  <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <h1>BiasBuster AI</h1>
-    <p>Paste your text and detect bias using LLMs</p>
-    
-    <form action="/analyze" method="POST">
-        <textarea name="user_text" placeholder="Paste your text here..." required></textarea><br>
-        <button type="submit">Analyze</button>
+  <div class="container">
+    <h1 class="title">Bias Buster AI</h1>
+    <form action="/analyze" method="post">
+      <textarea name="text" placeholder="Enter your text here..."></textarea>
+      <button type="submit">Analyze</button>
     </form>
+  </div>
 </body>
 </html>

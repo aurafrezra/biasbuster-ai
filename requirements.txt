@@ -1,6 +1,5 @@
-﻿Flask==3.0.3
-gunicorn==21.2.0
-transformers==4.43.0
-torch==2.5.1
-scikit-learn==1.4.2
-numpy==2.2.1
+﻿### ✅ Updated `requirements.txt`
+
+```txt
+flask
+```
